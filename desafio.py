@@ -16,21 +16,21 @@ def ConsultaExtrato():
 def ValidarSaque(valor_digitado):
     if valor_digitado >  valor_maximo_saque:
         print("Limite superior a R$ 500,00, operação não realizada")
-        return False
+        return True
 
     if valor_digitado > saldo_bancario:
         print("Valor digitado é maior que o saldo na conta, operação não realizada")   
-        return False
+        return True
 
 def ValidarQuantidadeSaque():
     if registro_saque >= 3:
         print("Limite de saque superior ao permitido, operação não realizada")
-        return False
+        return True
 
 def ValidarValorNegativo(valor_digitado):
     if valor_digitado <= 0:
         print("Não é permitido valores negativos, operação não realizada")
-        return False        
+        return True        
 
 
 while True:
@@ -55,19 +55,18 @@ while True:
         print("Digite um valor para saque: ")
         valor_digitado = float(input())   
 
-        if ValidarSaque(valor_digitado) == False:
+        if ValidarSaque(valor_digitado):
             continue
 
-        if ValidarQuantidadeSaque() == False:
+        if ValidarQuantidadeSaque():
             continue
 
-        if ValidarValorNegativo(valor_digitado) == False:
+        if ValidarValorNegativo(valor_digitado):
             continue
 
         saldo_bancario -= valor_digitado
 
-        registro_saque = registro_saque + 1
-        print("quantidade de saques:", registro_saque)
+        registro_saque = registro_saque + 1        
 
         registro_extrato.append({"Operacao": "Saque", "Valor": valor_digitado})
 
@@ -83,7 +82,7 @@ while True:
 
         valor_digitado = float(input())
          
-        if ValidarValorNegativo(valor_digitado) == False:
+        if ValidarValorNegativo(valor_digitado):
             continue
         
         saldo_bancario += valor_digitado
