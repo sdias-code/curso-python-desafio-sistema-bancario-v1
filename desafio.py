@@ -49,7 +49,7 @@ while True:
 
     opcao = int(input())
     if opcao == 4:
-        break;
+        break
 
     elif opcao == 1:
         print("Digite um valor para saque: ")
