@@ -1,6 +1,8 @@
 # Desafio Sistema Bancário Versão 1.0
+## Arquivo desafio.py
 
-## Sistema Bancário versão 1.0
+# Sistema Bancário versão 2.0
+## Arquivo desafio_focoes.py
 
 ### Operações:
  - Depósito
